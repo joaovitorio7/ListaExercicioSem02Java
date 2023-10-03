@@ -34,4 +34,7 @@ public class Data {
     public void setDia(int dia) {
         this.dia = dia;
     }
+
+    public String exibirData() {
+        return String.format("%d/%d/%d", this.dia, this.mes, this.ano);
 }
