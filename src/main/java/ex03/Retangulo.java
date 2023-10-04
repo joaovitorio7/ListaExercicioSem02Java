@@ -10,7 +10,11 @@ public class Retangulo {
     }
 
     public void setComprimento(double comprimento) {
-        this.comprimento = comprimento;
+        if (comprimento >= 0 && comprimento <= 20) {
+            this.comprimento = comprimento;
+        } else {
+            System.out.println("comprimento deve ser entre 0 e 20");
+        }
     }
 
     public double getLargura() {
@@ -18,6 +22,18 @@ public class Retangulo {
     }
 
     public void setLargura(double largura) {
-        this.largura = largura;
+        if (largura >= 0 && largura <= 20) {
+            this.largura = largura;
+        } else {
+            System.out.println("largura deve ser entre 0 e 20");
+        }
+    }
+
+    public double perimetro() {
+        return (this.largura + this.comprimento) * 2;
+    }
+
+    public double area() {
+        return this.largura * this.comprimento;
     }
 }
