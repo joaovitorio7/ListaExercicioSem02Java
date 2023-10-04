@@ -37,4 +37,5 @@ public class Data {
 
     public String exibirData() {
         return String.format("%d/%d/%d", this.dia, this.mes, this.ano);
+    }
 }
