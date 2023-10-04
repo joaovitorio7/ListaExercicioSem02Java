@@ -1,21 +1,19 @@
 package ex05;
 
-import java.util.Scanner;
+import java.time.LocalDate;
 
 public class TestaFreqCardiaca {
-    public String dataNascimento;
+    public static void main(String[] args) {
+        String nome = "João";
+        String sobrenome = "Silva";
+        LocalDate dataNascimento = LocalDate.of(1990, 5, 15);
 
-    public void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Informe sua data de nascimento no formato dd/MM/yyyy:");
-        String dataNascimento = scanner.nextLine();
+        FrequenciaCardiaca pessoa = new FrequenciaCardiaca(nome, sobrenome, dataNascimento);
 
-        FrequenciaCardiaca frequenciaCardiaca =
-                new FrequenciaCardiaca("Fulano", "Blabla", dataNascimento);
-
-        System.out.printf("Idade: %d %nFrequencia Card. Máx.:%d %nFreq. Card. Alvo:%.1f-%.1f",
-                frequenciaCardiaca.calculaIdade(this.dataNascimento), frequenciaCardiaca.frequenciaCardiacaMaxima(),
-                frequenciaCardiaca.frequenciaCardiacaAlvo()[0],
-                frequenciaCardiaca.frequenciaCardiacaAlvo()[1]);
+        System.out.println("Nome: " + pessoa.getNome() + " " + pessoa.getSobrenome());
+        System.out.println("Data de Nascimento: " + pessoa.getDataNascimento());
+        System.out.println("Idade: " + pessoa.calcularIdade() + " anos");
+        System.out.println("Frequência Cardíaca Máxima: " + pessoa.calcularFrequenciaCardiacaMaxima() + " bpm");
+        System.out.println("Frequência Cardíaca Alvo: " + pessoa.calcularFrequenciaCardiacaAlvo() + " bpm");
     }
 }
